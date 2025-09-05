@@ -68,12 +68,12 @@ async function getSingleEvent(req, res) {
       throw new Error({ message: "couldnt connect to database" });
     }
     console.log(req.params);
-    const eventId = new ObjectId(req.params["id"].trim());
-    console.log(`${ObjectId.isValid(req.params.id)} ${req.params.id}`);
+
+    console.log(` ${typeof req.params.id}`);
     const event = await client
       .db("eventX")
       .collection("events")
-      .findOne({ _id: eventId });
+      .findOne({ altid: Number(req.params.id) });
 
     res.json(event);
   } catch (e) {

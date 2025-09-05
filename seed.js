@@ -4,6 +4,7 @@ require("dotenv").config();
 const users = [
   {
     _id: { oid: "67a1b1ca59615304febd1a01" },
+    altid: 1001,
     email: "ahmed.hassan@gmail.com",
     password: "password123",
     role: "User",
@@ -14,6 +15,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a02" },
+    altid: 1002,
     email: "fatma.mohamed@gmail.com",
     password: "password123",
     role: "User",
@@ -24,6 +26,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a03" },
+    altid: 1003,
     email: "omar.ali@gmail.com",
     password: "password123",
     role: "User",
@@ -34,6 +37,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a04" },
+    altid: 1004,
     email: "nour.salem@gmail.com",
     password: "password123",
     role: "User",
@@ -44,6 +48,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a05" },
+    altid: 1005,
     email: "hassan.ahmed@gmail.com",
     password: "password123",
     role: "User",
@@ -54,6 +59,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a06" },
+    altid: 1006,
     email: "mona.ibrahim@gmail.com",
     password: "password123",
     role: "User",
@@ -64,6 +70,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a07" },
+    altid: 1007,
     email: "khaled.mostafa@gmail.com",
     password: "password123",
     role: "User",
@@ -74,6 +81,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a08" },
+    altid: 1008,
     email: "sara.mahmoud@gmail.com",
     password: "password123",
     role: "User",
@@ -84,6 +92,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a09" },
+    altid: 1009,
     email: "mahmoud.farouk@gmail.com",
     password: "password123",
     role: "User",
@@ -94,6 +103,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a10" },
+    altid: 1010,
     email: "yasmin.nasser@gmail.com",
     password: "password123",
     role: "User",
@@ -104,6 +114,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a11" },
+    altid: 1011,
     email: "tarek.hassan@gmail.com",
     password: "password123",
     role: "User",
@@ -114,6 +125,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a12" },
+    altid: 1012,
     email: "dina.rashad@gmail.com",
     password: "password123",
     role: "User",
@@ -124,6 +136,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a13" },
+    altid: 1013,
     email: "youssef.kamel@gmail.com",
     password: "password123",
     role: "User",
@@ -134,6 +147,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a14" },
+    altid: 1014,
     email: "rana.mohamed@gmail.com",
     password: "password123",
     role: "User",
@@ -144,6 +158,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a15" },
+    altid: 1015,
     email: "amr.sayed@gmail.com",
     password: "password123",
     role: "User",
@@ -154,6 +169,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a16" },
+    altid: 1016,
     email: "reem.ali@gmail.com",
     password: "password123",
     role: "User",
@@ -164,6 +180,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a17" },
+    altid: 1017,
     email: "karim.abdel@gmail.com",
     password: "password123",
     role: "User",
@@ -174,6 +191,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a18" },
+    altid: 1018,
     email: "hala.ahmed@gmail.com",
     password: "password123",
     role: "User",
@@ -184,6 +202,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a19" },
+    altid: 1019,
     email: "mohamed.omar@gmail.com",
     password: "password123",
     role: "User",
@@ -194,6 +213,7 @@ const users = [
   },
   {
     _id: { oid: "67a1b1ca59615304febd1a20" },
+    altid: 1020,
     email: "laila.hassan@gmail.com",
     password: "password123",
     role: "User",
@@ -208,6 +228,7 @@ const users = [
 const events = [
   {
     _id: { oid: "68b2f1157ceb5b091df79901" },
+    altid: 2001,
     name: "Cairo International Book Fair",
     venue: "Cairo International Convention Center",
     date: "2025-01-15",
@@ -231,6 +252,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79902" },
+    altid: 2002,
     name: "Rock the Nile Festival",
     venue: "New Administrative Capital",
     date: "2025-02-20",
@@ -253,6 +275,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79903" },
+    altid: 2003,
     name: "Tech Summit Cairo 2025",
     venue: "Smart Village",
     date: "2025-03-10",
@@ -275,6 +298,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79904" },
+    altid: 2004,
     name: "Alexandria Art Exhibition",
     venue: "Bibliotheca Alexandrina",
     date: "2025-01-25",
@@ -297,6 +321,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79905" },
+    altid: 2005,
     name: "Cairo Marathon 2025",
     venue: "Tahrir Square to Pyramids",
     date: "2025-02-15",
@@ -319,6 +344,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79906" },
+    altid: 2006,
     name: "Stand-up Comedy Night",
     venue: "Cairo Opera House",
     date: "2025-01-30",
@@ -341,6 +367,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79907" },
+    altid: 2007,
     name: "Startup Pitch Competition",
     venue: "AUC New Cairo",
     date: "2025-03-05",
@@ -363,6 +390,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79908" },
+    altid: 2008,
     name: "Classical Music Concert",
     venue: "Cairo Opera House",
     date: "2025-02-28",
@@ -385,6 +413,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79909" },
+    altid: 2009,
     name: "Food Festival Cairo",
     venue: "Al Azhar Park",
     date: "2025-04-12",
@@ -407,6 +436,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79910" },
+    altid: 2010,
     name: "Photography Workshop",
     venue: "Downtown Cairo",
     date: "2025-01-28",
@@ -429,6 +459,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79911" },
+    altid: 2011,
     name: "Fashion Week Cairo",
     venue: "Four Seasons Hotel",
     date: "2025-03-22",
@@ -451,6 +482,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79912" },
+    altid: 2012,
     name: "Gaming Convention",
     venue: "Cairo Festival City",
     date: "2025-04-05",
@@ -473,6 +505,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79913" },
+    altid: 2013,
     name: "Health & Wellness Expo",
     venue: "Cairo International Conference Center",
     date: "2025-02-10",
@@ -495,6 +528,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79914" },
+    altid: 2014,
     name: "Real Estate Summit",
     venue: "Sheraton Cairo",
     date: "2025-03-18",
@@ -517,6 +551,7 @@ const events = [
   },
   {
     _id: { oid: "68b2f1157ceb5b091df79915" },
+    altid: 2015,
     name: "Children's Theater Festival",
     venue: "Hanager Arts Center",
     date: "2025-04-15",
