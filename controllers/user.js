@@ -36,21 +36,21 @@ async function buyTicket(req, res) {
   await client.connect();
 
   try {
-    const eventId = new ObjectId(req.params.id);
-    const userId = new ObjectId(req.user.id);
+    const eventId = Number(req.params.id);
+    const userId = Number(req.user.id);
 
     const user = await client
       .db("eventX")
       .collection("users")
-      .findOne({ _id: userId });
+      .findOne({ altid: userId });
 
     const event = await client
       .db("eventX")
       .collection("events")
-      .findOne({ _id: eventId });
+      .findOne({ altid: eventId });
 
     if (!user || !event) {
-      console.table(user);
+      console.log(req.user);
       return res.send("wait");
     }
 
@@ -58,21 +58,17 @@ async function buyTicket(req, res) {
       .db("eventX")
       .collection("events")
       .updateOne(
-        { _id: eventId, availableSeats: { $gt: 0 } },
+        { altid: eventId, availableSeats: { $gt: 0 } },
         {
           $inc: { availableSeats: -1, soldSeats: 1 },
           $push: { buyers: user },
         }
       );
 
-    if (eventUpdateResult.modifiedCount === 0) {
-      throw new Error({ message: "please" });
-    }
-
     await client
       .db("eventX")
       .collection("users")
-      .updateOne({ _id: userId }, { $push: { purchasedEvents: event } });
+      .updateOne({ altid: userId }, { $push: { purchasedEvents: event } });
 
     res.status(200).json({ message: "Ticket purchased successfully!" });
   } catch (error) {
@@ -84,13 +80,13 @@ async function buyTicket(req, res) {
 }
 async function listOwnedTickets(req, res) {
   const client = new MongoClient(process.env.DATABASE_URL);
-  id = new ObjectId(req.user.id);
+  id = Number(req.user.id);
   try {
-    await client.connect;
+    await client.connect();
     const data = await client
       .db("eventX")
       .collection("users")
-      .findOne({ _id: id });
+      .findOne({ altid: id });
     res.json(data.purchasedEvents);
   } catch {
     res.json("error");
