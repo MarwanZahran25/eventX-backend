@@ -84,22 +84,20 @@ async function getSingleEvent(req, res) {
 }
 async function allocateTicket(req, res) {
   const client = new MongoClient(process.env.DATABASE_URL);
-  const user = req.body.userId;
+  const user = req.body.id;
   const ticket = req.params.ticketId;
-  const eventId = new ObjectId(ticket);
-  const userId = new ObjectId(user);
 
   try {
     await client.connect();
     const user = await client
       .db("eventX")
       .collection("users")
-      .findOne({ _id: userId });
+      .findOne({ altid: user });
 
     const event = await client
       .db("eventX")
       .collection("events")
-      .findOne({ _id: eventId });
+      .findOne({ altid: eventId });
 
     if (!user || !event) {
       console.table(user);

@@ -20,7 +20,7 @@ async function signin(req, res) {
     if (data.password !== password) {
       return res.status(400).json("password is not correct ");
     }
-    const newData = { id: data._id.oid, email: data.email, role: data.role };
+    const newData = { id: data.altid, email: data.email, role: data.role };
     token = await jwt.sign(newData, process.env.SECRET);
     const isAdmin = newData.role === "Admin";
     res.json({ token, isAdmin });
