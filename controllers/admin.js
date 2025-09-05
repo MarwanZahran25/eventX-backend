@@ -84,15 +84,15 @@ async function getSingleEvent(req, res) {
 }
 async function allocateTicket(req, res) {
   const client = new MongoClient(process.env.DATABASE_URL);
-  const user = req.body.id;
-  const ticket = req.params.ticketId;
+  const userId = Number(req.body.userId);
+  const eventId = Number(req.params.ticketId);
 
   try {
     await client.connect();
     const user = await client
       .db("eventX")
       .collection("users")
-      .findOne({ altid: user });
+      .findOne({ altid: userId });
 
     const event = await client
       .db("eventX")
@@ -108,7 +108,7 @@ async function allocateTicket(req, res) {
       .db("eventX")
       .collection("events")
       .updateOne(
-        { _id: eventId, availableSeats: { $gt: 0 } },
+        { altid: eventId, availableSeats: { $gt: 0 } },
         {
           $inc: { availableSeats: -1, soldSeats: 1 },
           $push: { buyers: user },
@@ -122,7 +122,7 @@ async function allocateTicket(req, res) {
     await client
       .db("eventX")
       .collection("users")
-      .updateOne({ _id: userId }, { $push: { purchasedEvents: event } });
+      .updateOne({ altid: userId }, { $push: { purchasedEvents: event } });
 
     res.status(200).json({ message: "Ticket allocated successfully!" });
   } catch (error) {
